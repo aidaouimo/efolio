@@ -18,7 +18,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -29,7 +28,6 @@
     cursor: none;
   }
 
-  /* Custom cursor */
   .cursor {
     position: fixed;
     width: 10px; height: 10px;
@@ -50,7 +48,6 @@
     transition: transform 0.35s cubic-bezier(.17,.67,.35,1.2);
   }
 
-  /* Grid overlay */
   body::before {
     content: '';
     position: fixed;
@@ -63,7 +60,6 @@
     z-index: 0;
   }
 
-  /* Noise texture overlay */
   body::after {
     content: '';
     position: fixed;
@@ -74,7 +70,6 @@
     opacity: 0.4;
   }
 
-  /* Navigation */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -95,7 +90,6 @@
     letter-spacing: -0.03em;
     color: var(--text);
   }
-
   .nav-logo span { color: var(--accent); }
 
   .nav-links {
@@ -103,7 +97,6 @@
     gap: 2.5rem;
     list-style: none;
   }
-
   .nav-links a {
     font-size: 0.72rem;
     letter-spacing: 0.1em;
@@ -142,7 +135,6 @@
     pointer-events: none;
     animation: pulse 6s ease-in-out infinite;
   }
-
   .hero-glow2 {
     position: absolute;
     width: 400px; height: 400px;
@@ -169,12 +161,10 @@
     opacity: 0;
     animation: fadeUp 0.8s 0.2s forwards;
   }
-
   .hero-eyebrow::before {
     content: '';
     display: block;
-    width: 40px;
-    height: 1px;
+    width: 40px; height: 1px;
     background: var(--accent);
   }
 
@@ -188,7 +178,6 @@
     opacity: 0;
     animation: fadeUp 0.8s 0.4s forwards;
   }
-
   .hero-name .outline {
     -webkit-text-stroke: 1px rgba(255,255,255,0.25);
     color: transparent;
@@ -203,11 +192,7 @@
     opacity: 0;
     animation: fadeUp 0.8s 0.6s forwards;
   }
-
-  .hero-title span {
-    color: var(--accent2);
-    font-style: italic;
-  }
+  .hero-title span { color: var(--accent2); font-style: italic; }
 
   .hero-desc {
     max-width: 520px;
@@ -242,10 +227,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
     display: inline-block;
   }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(79,255,176,0.3);
-  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(79,255,176,0.3); }
 
   .btn-secondary {
     font-family: 'DM Mono', monospace;
@@ -263,8 +245,7 @@
 
   .hero-scroll {
     position: absolute;
-    bottom: 2rem;
-    right: 4rem;
+    bottom: 2rem; right: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -274,27 +255,22 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
   }
-
   .scroll-line {
-    width: 1px;
-    height: 60px;
+    width: 1px; height: 60px;
     background: linear-gradient(to bottom, var(--muted), transparent);
     animation: scrollLine 2s ease-in-out infinite;
   }
-
   @keyframes scrollLine {
     0% { transform: scaleY(0); transform-origin: top; }
     50% { transform: scaleY(1); transform-origin: top; }
     51% { transform: scaleY(1); transform-origin: bottom; }
     100% { transform: scaleY(0); transform-origin: bottom; }
   }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Section common */
   section {
     position: relative;
     z-index: 1;
@@ -314,8 +290,7 @@
   .section-label::after {
     content: '';
     display: block;
-    height: 1px;
-    width: 30px;
+    height: 1px; width: 30px;
     background: var(--accent);
   }
 
@@ -345,7 +320,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .skill-card::before {
     content: '';
     position: absolute;
@@ -354,7 +328,6 @@
     opacity: 0;
     transition: opacity 0.3s;
   }
-
   .skill-card:hover { border-color: rgba(79,255,176,0.2); background: #16161f; }
   .skill-card:hover::before { opacity: 1; }
 
@@ -365,19 +338,13 @@
     color: var(--accent);
     margin-bottom: 0.8rem;
   }
-
   .skill-name {
     font-family: 'Syne', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 1rem;
   }
-
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
   .tag {
     font-size: 0.65rem;
@@ -389,21 +356,14 @@
   }
 
   /* Experience */
-  .timeline {
-    position: relative;
-    padding-left: 2rem;
-  }
-
+  .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 8px;
+    left: 0; top: 8px; bottom: 8px;
     width: 1px;
     background: linear-gradient(to bottom, var(--accent), transparent);
   }
-
   .timeline-item {
     position: relative;
     margin-bottom: 3.5rem;
@@ -412,19 +372,15 @@
     transform: translateX(-20px);
     transition: opacity 0.6s, transform 0.6s;
   }
-
   .timeline-item.visible { opacity: 1; transform: translateX(0); }
-
   .timeline-dot {
     position: absolute;
-    left: -2.57rem;
-    top: 6px;
+    left: -2.57rem; top: 6px;
     width: 10px; height: 10px;
     border: 2px solid var(--accent);
     background: var(--bg);
     border-radius: 50%;
   }
-
   .timeline-date {
     font-size: 0.68rem;
     letter-spacing: 0.1em;
@@ -432,7 +388,6 @@
     margin-bottom: 0.5rem;
     text-transform: uppercase;
   }
-
   .timeline-company {
     font-family: 'Syne', sans-serif;
     font-size: 1.4rem;
@@ -440,26 +395,14 @@
     letter-spacing: -0.02em;
     margin-bottom: 0.25rem;
   }
-
   .timeline-role {
     font-size: 0.78rem;
     color: var(--muted);
     margin-bottom: 1.2rem;
     letter-spacing: 0.05em;
   }
-
-  .timeline-role em {
-    font-style: normal;
-    color: var(--accent2);
-  }
-
-  .timeline-tasks {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
+  .timeline-role em { font-style: normal; color: var(--accent2); }
+  .timeline-tasks { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
   .timeline-tasks li {
     font-size: 0.8rem;
     color: var(--muted);
@@ -467,21 +410,10 @@
     padding-left: 1rem;
     position: relative;
   }
-
-  .timeline-tasks li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-  }
+  .timeline-tasks li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
 
   /* Education */
-  .edu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
   .edu-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -490,9 +422,7 @@
     overflow: hidden;
     transition: border-color 0.3s, transform 0.3s;
   }
-
   .edu-card:hover { border-color: rgba(79,255,176,0.3); transform: translateY(-4px); }
-
   .edu-card::after {
     content: '';
     position: absolute;
@@ -500,36 +430,13 @@
     width: 3px; height: 100%;
     background: var(--accent);
   }
-
-  .edu-year {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-  }
-
-  .edu-school {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-  }
-
-  .edu-degree {
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
+  .edu-year { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.8rem; }
+  .edu-school { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .edu-degree { font-size: 0.78rem; color: var(--muted); }
 
   /* Certifications */
   .certs-section { background: var(--surface); border-top: 1px solid var(--border); }
-
-  .certs-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
+  .certs-list { display: flex; flex-wrap: wrap; gap: 1rem; }
   .cert-item {
     display: flex;
     align-items: center;
@@ -542,7 +449,6 @@
     transition: border-color 0.3s, color 0.3s;
     cursor: default;
   }
-
   .cert-item:hover { border-color: rgba(79,255,176,0.4); color: var(--accent); }
   .cert-item::before { content: '✦'; color: var(--accent); font-size: 0.6rem; }
 
@@ -553,20 +459,16 @@
     position: relative;
     overflow: hidden;
   }
-
   .contact-glow {
     position: absolute;
     inset: 0;
     background: radial-gradient(ellipse at center, rgba(79,255,176,0.05) 0%, transparent 70%);
     pointer-events: none;
   }
-
   .contact-section .section-label { justify-content: center; }
   .contact-section .section-label::after { display: none; }
   .contact-section .section-label::before { content: ''; display: block; height: 1px; width: 30px; background: var(--accent); }
-
   .contact-section .section-title { font-size: clamp(2.5rem, 6vw, 5rem); }
-
   .contact-links {
     display: flex;
     justify-content: center;
@@ -574,7 +476,6 @@
     gap: 1.5rem;
     margin-top: 3rem;
   }
-
   .contact-link {
     display: flex;
     align-items: center;
@@ -587,14 +488,8 @@
     border: 1px solid var(--border);
     transition: all 0.3s;
   }
+  .contact-link:hover { color: var(--accent); border-color: rgba(79,255,176,0.4); background: rgba(79,255,176,0.04); }
 
-  .contact-link:hover {
-    color: var(--accent);
-    border-color: rgba(79,255,176,0.4);
-    background: rgba(79,255,176,0.04);
-  }
-
-  /* Footer */
   footer {
     border-top: 1px solid var(--border);
     padding: 2rem 4rem;
@@ -604,35 +499,11 @@
     position: relative;
     z-index: 1;
   }
+  .footer-copy { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; }
+  .footer-status { display: flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; color: var(--accent); letter-spacing: 0.08em; }
+  .status-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 2s infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
 
-  .footer-copy {
-    font-size: 0.68rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-  }
-
-  .footer-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.68rem;
-    color: var(--accent);
-    letter-spacing: 0.08em;
-  }
-
-  .status-dot {
-    width: 6px; height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: blink 2s infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.2; }
-  }
-
-  /* Divider */
   .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--border), transparent);
@@ -656,15 +527,26 @@
     overflow: hidden;
     transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
   }
-
   .project-card:hover {
     border-color: rgba(79,255,176,0.3);
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.4);
   }
-
   .project-card--ghost { opacity: 0.75; }
   .project-card--ghost:hover { opacity: 1; }
+
+  /* Badge "New" sur les nouveaux projets */
+  .project-card--new::after {
+    content: 'NEW';
+    position: absolute;
+    top: 1.2rem; right: 1.2rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    color: #0a0a0f;
+    background: var(--accent);
+    padding: 0.2rem 0.5rem;
+    font-weight: 700;
+  }
 
   .project-card::before {
     content: '';
@@ -681,9 +563,7 @@
     align-items: center;
     margin-bottom: 1.2rem;
   }
-
   .project-icon { color: var(--muted); }
-
   .project-link-btn {
     font-size: 0.65rem;
     letter-spacing: 0.1em;
@@ -705,12 +585,7 @@
     letter-spacing: 0.08em;
     margin-bottom: 0.6rem;
   }
-
-  .lang-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+  .lang-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
   .project-name {
     font-family: 'Syne', sans-serif;
@@ -719,7 +594,6 @@
     margin-bottom: 0.7rem;
     letter-spacing: -0.02em;
   }
-
   .project-desc {
     font-size: 0.78rem;
     color: var(--muted);
@@ -727,14 +601,27 @@
     margin-bottom: 1.2rem;
   }
 
-  /* Documents */
-  .docs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 0;
+  /* Séparateur de section projets */
+  .projects-separator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 2rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .projects-separator::before,
+  .projects-separator::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
   }
 
+  /* Documents */
+  .docs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 0; }
   .doc-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -743,14 +630,8 @@
     transition: border-color 0.3s, transform 0.3s;
     position: relative;
   }
-
-  .doc-card:hover {
-    border-color: rgba(79,255,176,0.35);
-    transform: translateY(-3px);
-  }
-
+  .doc-card:hover { border-color: rgba(79,255,176,0.35); transform: translateY(-3px); }
   .doc-card:hover .doc-action { color: var(--accent); }
-
   .doc-preview {
     display: flex;
     gap: 1.5rem;
@@ -759,7 +640,6 @@
     padding-bottom: 1.2rem;
     border-bottom: 1px solid var(--border);
   }
-
   .doc-preview-icon {
     flex-shrink: 0;
     width: 48px; height: 56px;
@@ -769,122 +649,24 @@
     align-items: center;
     justify-content: center;
   }
-
-  .doc-preview-lines {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    padding-top: 4px;
-  }
-
-  .doc-line {
-    height: 6px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 2px;
-  }
-  .w-40 { width: 40%; }
-  .w-50 { width: 50%; }
-  .w-60 { width: 60%; }
-  .w-65 { width: 65%; }
-  .w-70 { width: 70%; }
-  .w-75 { width: 75%; }
-  .w-80 { width: 80%; }
-  .w-90 { width: 90%; }
-
-  .doc-type {
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.4rem;
-  }
-
-  .doc-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-  }
-
-  .doc-meta {
-    font-size: 0.72rem;
-    color: var(--muted);
-  }
-
-  .doc-action {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    transition: color 0.2s;
-    text-transform: uppercase;
-  }
+  .doc-preview-lines { flex: 1; display: flex; flex-direction: column; gap: 0.4rem; padding-top: 4px; }
+  .doc-line { height: 6px; background: rgba(255,255,255,0.06); border-radius: 2px; }
+  .w-40{width:40%}.w-50{width:50%}.w-60{width:60%}.w-65{width:65%}.w-70{width:70%}.w-75{width:75%}.w-80{width:80%}.w-90{width:90%}
+  .doc-type { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .doc-name { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .doc-meta { font-size: 0.72rem; color: var(--muted); }
+  .doc-action { position: absolute; bottom: 1.5rem; right: 1.5rem; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--muted); transition: color 0.2s; text-transform: uppercase; }
 
   /* Modal */
-  .doc-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: 1000;
-    backdrop-filter: blur(8px);
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
+  .doc-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 2rem; }
   .doc-modal.open { display: flex; }
-
-  .doc-modal-inner {
-    width: 100%;
-    max-width: 900px;
-    height: 85vh;
-    background: var(--card);
-    border: 1px solid rgba(79,255,176,0.2);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  .doc-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-  }
-
-  .doc-modal-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-  }
-
-  .doc-modal-close {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.8rem;
-    padding: 0.3rem 0.7rem;
-    cursor: pointer;
-    font-family: 'DM Mono', monospace;
-    transition: color 0.2s, border-color 0.2s;
-  }
+  .doc-modal-inner { width: 100%; max-width: 900px; height: 85vh; background: var(--card); border: 1px solid rgba(79,255,176,0.2); display: flex; flex-direction: column; overflow: hidden; }
+  .doc-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); background: var(--surface); }
+  .doc-modal-title { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.02em; }
+  .doc-modal-close { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; padding: 0.3rem 0.7rem; cursor: pointer; font-family: 'DM Mono', monospace; transition: color 0.2s, border-color 0.2s; }
   .doc-modal-close:hover { color: var(--accent); border-color: var(--accent); }
+  .doc-frame { flex: 1; width: 100%; border: none; background: #fff; }
 
-  .doc-frame {
-    flex: 1;
-    width: 100%;
-    border: none;
-    background: #fff;
-  }
-
-  /* Responsive */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
@@ -974,7 +756,7 @@
       <div class="skill-name">Backend</div>
       <div class="skill-tags">
         <span class="tag">Java EE / Jakarta EE</span>
-        <span class="tag">Spring</span>
+        <span class="tag">Spring Boot</span>
         <span class="tag">REST APIs</span>
         <span class="tag">JUnit</span>
       </div>
@@ -984,8 +766,19 @@
       <div class="skill-name">Bases de données</div>
       <div class="skill-tags">
         <span class="tag">Oracle</span>
+        <span class="tag">PostgreSQL</span>
         <span class="tag">MongoDB</span>
         <span class="tag">Hibernate</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">ML / Algo</div>
+      <div class="skill-name">Data &amp; IA</div>
+      <div class="skill-tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">TF-IDF</span>
+        <span class="tag">Filtrage collaboratif</span>
       </div>
     </div>
     <div class="skill-card">
@@ -995,9 +788,9 @@
         <span class="tag">Agile / Scrum</span>
         <span class="tag">TDD</span>
         <span class="tag">Git</span>
+        <span class="tag">Docker</span>
         <span class="tag">Linux</span>
-        <span class="tag">Windows</span>
-        <span class="tag">macOS</span>
+        <span class="tag">JIRA</span>
       </div>
     </div>
   </div>
@@ -1094,6 +887,7 @@
   <div class="section-label">GitHub</div>
   <h2 class="section-title">Projets</h2>
 
+  <!-- Projets personnels (existant) -->
   <div class="projects-grid">
 
     <div class="project-card">
@@ -1101,14 +895,12 @@
         <div class="project-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/aidaouimo/application-web-comme-IMDB" target="_blank" class="project-link-btn">↗ Voir</a>
-        </div>
+        <a href="https://github.com/aidaouimo/application-web-comme-IMDB" target="_blank" class="project-link-btn">↗ Voir</a>
       </div>
       <div class="project-lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
       <div class="project-name">Application Web IMDB</div>
       <div class="project-desc">Application web collaborative de gestion de films, inspirée d'IMDB. CRUD complet : ajout, modification, suppression et consultation de films.</div>
-      <div class="project-tags">
+      <div class="skill-tags">
         <span class="tag">JavaScript</span>
         <span class="tag">Full Stack</span>
         <span class="tag">REST API</span>
@@ -1120,14 +912,12 @@
         <div class="project-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/aidaouimo" target="_blank" class="project-link-btn">↗ GitHub</a>
-        </div>
+        <a href="https://github.com/aidaouimo" target="_blank" class="project-link-btn">↗ GitHub</a>
       </div>
       <div class="project-lang"><span class="lang-dot" style="background:#f89820"></span>Java</div>
       <div class="project-name">Projets Full Stack JEE</div>
       <div class="project-desc">Développements réalisés en Java EE / Spring Boot avec TDD, Angular et REST APIs dans le cadre académique et professionnel.</div>
-      <div class="project-tags">
+      <div class="skill-tags">
         <span class="tag">Spring</span>
         <span class="tag">Angular</span>
         <span class="tag">JUnit</span>
@@ -1140,17 +930,82 @@
         <div class="project-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/aidaouimo" target="_blank" class="project-link-btn">↗ GitHub</a>
-        </div>
+        <a href="https://github.com/aidaouimo" target="_blank" class="project-link-btn">↗ GitHub</a>
       </div>
       <div class="project-lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
       <div class="project-name">Projets Analyse de Données</div>
-      <div class="project-desc">Scripts Python pour l'analyse et le traitement de données, avec requêtes SQL/PL-SQL et gestion de bases Oracle & MongoDB.</div>
-      <div class="project-tags">
+      <div class="project-desc">Scripts Python pour l'analyse et le traitement de données, avec requêtes SQL/PL-SQL et gestion de bases Oracle &amp; MongoDB.</div>
+      <div class="skill-tags">
         <span class="tag">Python</span>
         <span class="tag">SQL</span>
         <span class="tag">MongoDB</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Séparateur nouveaux projets -->
+  <div class="projects-separator">Projets personnels récents</div>
+
+  <!-- Nouveaux projets -->
+  <div class="projects-grid">
+
+    <!-- Film Recommender -->
+    <div class="project-card project-card--new">
+      <div class="project-header">
+        <div class="project-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+        </div>
+        <a href="https://github.com/aidaouimo/film-recommender" target="_blank" class="project-link-btn">↗ Voir</a>
+      </div>
+      <div class="project-lang"><span class="lang-dot" style="background:#3572A5"></span>Python · 2025</div>
+      <div class="project-name">Film Recommendation Engine</div>
+      <div class="project-desc">Moteur de recommandation de films basé sur le filtrage collaboratif (user-based &amp; item-based). Similarité cosinus et Pearson, évaluation RMSE/MAE/NDCG@K, validation croisée K-fold sur le dataset MovieLens.</div>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">Collaborative Filtering</span>
+        <span class="tag">MovieLens</span>
+      </div>
+    </div>
+
+    <!-- Mini Search Engine -->
+    <div class="project-card project-card--new">
+      <div class="project-header">
+        <div class="project-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <a href="https://github.com/aidaouimo/mini-search-engine" target="_blank" class="project-link-btn">↗ Voir</a>
+      </div>
+      <div class="project-lang"><span class="lang-dot" style="background:#3572A5"></span>Python · 2024</div>
+      <div class="project-name">Mini Search Engine</div>
+      <div class="project-desc">Moteur de recherche full-text avec index inversé positionnel, stemmer Porter from scratch, classement TF-IDF &amp; BM25, requêtes booléennes (AND/OR/NOT) et recherche de phrases. Zéro dépendance externe — stdlib uniquement.</div>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">TF-IDF</span>
+        <span class="tag">BM25</span>
+        <span class="tag">Inverted Index</span>
+        <span class="tag">NLP</span>
+      </div>
+    </div>
+
+    <!-- Data Processing API -->
+    <div class="project-card project-card--new">
+      <div class="project-header">
+        <div class="project-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <a href="https://github.com/aidaouimo/data-processing-api" target="_blank" class="project-link-btn">↗ Voir</a>
+      </div>
+      <div class="project-lang"><span class="lang-dot" style="background:#f89820"></span>Java · 2024</div>
+      <div class="project-name">Data Processing API</div>
+      <div class="project-desc">API REST modulaire en Spring Boot 3 pour le traitement de données par pipeline. Architecture en steps chaînés (validation → normalisation → enrichissement), traitement asynchrone par batch, migrations Flyway et Swagger UI intégrés.</div>
+      <div class="skill-tags">
+        <span class="tag">Spring Boot 3</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">REST API</span>
+        <span class="tag">Pipeline</span>
+        <span class="tag">Docker</span>
       </div>
     </div>
 
@@ -1254,14 +1109,17 @@
   <h2 class="section-title">Travaillons<br>ensemble.</h2>
 
   <div class="contact-links">
-    <a href="/cdn-cgi/l/email-protection#6c0d05080d031905410103040d0109082c03191800030307420f0301" class="contact-link">
-      ✉ <span class="__cf_email__" data-cfemail="87e6eee3e6e8f2eeaaeae8efe6eae2e3c7e8f2f3ebe8e8eca9e4e8ea">email&#160;aidaoui31@gmail.com</span>
+    <a href="mailto:aidaoui31@gmail.com" class="contact-link">
+      ✉ aidaoui31@gmail.com
     </a>
     <a href="tel:+33767062082" class="contact-link">
       ✆ +33 7 67 06 20 82
     </a>
     <a href="https://linkedin.com/in/mohamed-aidaoui" target="_blank" class="contact-link">
       ⟶ LinkedIn
+    </a>
+    <a href="https://github.com/aidaouimo" target="_blank" class="contact-link">
+      ⟶ GitHub
     </a>
   </div>
 </section>
@@ -1275,7 +1133,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -1296,7 +1154,7 @@
   }
   animateRing();
 
-  document.querySelectorAll('a, button, .cert-item, .skill-card, .edu-card').forEach(el => {
+  document.querySelectorAll('a, button, .cert-item, .skill-card, .edu-card, .project-card').forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.style.transform = 'scale(2.5)';
       ring.style.transform = 'scale(1.5)';
@@ -1343,7 +1201,6 @@
 
   items.forEach(item => observer.observe(item));
 
-  // Also make all items visible on load if already in view
   window.addEventListener('load', () => {
     items.forEach(item => {
       const rect = item.getBoundingClientRect();
